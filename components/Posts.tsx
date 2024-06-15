@@ -41,10 +41,10 @@ export default function Posts() {
   return (
     <div className={styles.container}>
       {Object.entries(postList).map(([year, posts]) => (
-        <div className={styles.postContainer}>
+        <div className={styles.postContainer} key={year}>
           <h2 className={styles.yearTitle}>{year}</h2>
           {posts.map((post) => (
-            <div className={styles.post}>
+            <div className={styles.post} key={post.title}>
               <div className={styles.date}>
                 <span>{formatDate(post.datePosted)}</span>
               </div>

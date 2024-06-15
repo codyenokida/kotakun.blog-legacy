@@ -17,7 +17,7 @@ export default async function Page() {
           this huge world.
           <br />
           <br />
-          If you're curious, you can find more{" "}
+          If you&apos;re curious, you can find more{" "}
           <Link href="/about" className={styles.textLink}>
             about me
           </Link>
