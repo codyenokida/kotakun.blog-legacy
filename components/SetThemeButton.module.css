@@ -1,0 +1,49 @@
+.button {
+  height: 32px;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-4);
+  padding: var(--space-2);
+  background-color: transparent;
+  border: 2px solid rgba(var(--foreground-rgb));
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.svg {
+  width: 18px;
+  height: 18px;
+  filter: var(--svg-filter-mask);
+}
+
+.button:active {
+  height: 31px;
+  width: 31px;
+  transition-duration: 0.6s ease-in;
+  transition-property: width, height;
+}
+
+.button:hover .svg {
+  width: 16px;
+  height: 16px;
+  opacity: 0.8;
+  transition-duration: 1s ease-in-out;
+  transition-property: width, height;
+}
+
+.svg path {
+  stroke-dasharray: 320;
+  stroke-dashoffset: 0;
+  animation: dash 1s linear;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 320;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
