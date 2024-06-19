@@ -44,16 +44,24 @@
 .span {
   font-size: var(--font-size-6);
   line-height: 30px;
+  color: rgb(var(--logo-color));
+  font-weight: 700;
 }
 
 .blogText {
   position: absolute;
   transition-duration: 0.5s;
   transition-property: left;
+  color: rgb(var(--logo-color));
+  font-weight: 700;
+}
+
+.green {
+  color: rgb(var(--logo-dot-color));
 }
 
 .revealText .blogText {
-  left: 128px;
+  left: 129px;
 }
 
 .hideText .blogText {

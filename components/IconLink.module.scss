@@ -1,0 +1,19 @@
+.link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.link:hover {
+  text-decoration: none;
+}
+
+.link > svg {
+  transform: translateX(0);
+  transition: 0.2s;
+}
+
+.link:hover > svg {
+  transform: translateX(calc(-1 * var(--space-1)));
+  transition: 0.3s;
+}

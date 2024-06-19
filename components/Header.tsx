@@ -6,7 +6,7 @@ import Link from "next/link";
 
 import LoadingThemeButton from "@/components/LoadingThemeButton";
 
-import styles from "./Header.module.css";
+import styles from "./Header.module.scss";
 import { useEffect, useState } from "react";
 import SplitText from "./SplitText";
 import classNames from "classnames";
@@ -22,11 +22,10 @@ export default function Header() {
     "transparent" | "rgb(200, 200, 200, 0.5)"
   >("transparent");
   const [revealText, setRevealText] = useState<boolean>(false);
-  const [mutex, setMutex] = useState<boolean>(true);
 
   const handleScroll = () => {
     const currentScrollPos = window.scrollY;
-    const difference = 120 - currentScrollPos
+    const difference = 120 - currentScrollPos;
 
     if (difference > 60) {
       setHeaderHeight(difference);
@@ -47,10 +46,9 @@ export default function Header() {
    * Trigger reveal text on first render
    */
   useEffect(() => {
-    setRevealText(true);
     setTimeout(() => {
-      setRevealText(false);
-    }, 2000);
+      setRevealText(true);
+    }, 500);
   }, []);
 
   return (
@@ -64,8 +62,8 @@ export default function Header() {
             <Link
               href="/"
               className={styles.link}
-              onMouseOver={() => setRevealText(true)}
-              onMouseLeave={() => setRevealText(false)}
+              // onMouseOver={() => setRevealText(true)}
+              // onMouseLeave={() => setRevealText(false)}
             >
               <div className={styles.logo}>
                 <img
@@ -78,13 +76,15 @@ export default function Header() {
                     [styles.revealText]: revealText,
                     [styles.hideText]: !revealText,
                   })}
-                  onMouseOver={() => setRevealText(true)}
-                  onMouseLeave={() => setRevealText(false)}
+                  // onMouseOver={() => setRevealText(true)}
+                  // onMouseLeave={() => setRevealText(false)}
                 >
                   {revealText && (
                     <SplitText className={styles.reveal}>kotakun</SplitText>
                   )}
-                  <span className={styles.blogText}>.blog</span>
+                  <span className={styles.blogText}>
+                    <span className={styles.green}>.</span>blog
+                  </span>
                 </span>
               </div>
             </Link>

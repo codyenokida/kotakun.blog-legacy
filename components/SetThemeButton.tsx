@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-import styles from "./SetThemeButton.module.css";
+import styles from "./SetThemeButton.module.scss";
 import classNames from "classnames";
 
 const SetThemeButton = ({ style }: any) => {

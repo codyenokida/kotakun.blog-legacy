@@ -1,6 +1,3 @@
-.main {
-}
-
 .content {
   display: grid;
   grid-template-columns: 1fr minmax(auto, var(--max-width)) 1fr;
@@ -17,6 +14,10 @@
   position: relative;
 }
 
+.name {
+  color: rgba(var(--color-brand));
+}
+
 .textLink:hover {
   /* transform: translateY(10px); */
   margin-bottom: 10px;
@@ -24,7 +25,7 @@
 
 .textLink::before {
   position: absolute;
-  content: url("/question-mark.svg");
+  /* content: url("/question-mark.svg"); */
   line-height: 36px;
   font-size: 36px;
   width: 36px;
@@ -47,7 +48,7 @@
   width: 100%;
   height: var(--offsetHeight);
   grid-column: 2;
-  border-bottom: 1px solid var(--color-border-gray);
+  border-bottom: 1px solid rgba(var(--color-border-gray));
 }
 
 .dateTitle {

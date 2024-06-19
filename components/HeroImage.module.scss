@@ -1,0 +1,36 @@
+.image {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border: 1px solid rgb(var(--foreground-rgb));
+  border-radius: var(--border-radius-xs);
+}
+
+.caption {
+  width: 75%;
+  margin: 0 auto;
+  color: rgb(var(--color-description-text));
+  text-align: center;
+  font-style: italic;
+}
+
+// Large devices (desktops, 992px and up)
+@media (max-width: 992px) and (min-width: 769px) {
+  .image {
+    height: 320px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (max-width: 768px) and (min-width: 577px) {
+  .image {
+    height: 300px;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+  .image {
+    height: 200px;
+  }
+}

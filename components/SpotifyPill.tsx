@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 import { convertToEmbedUrl } from "@/utils/helper";
 
-import styles from "./SpotifyPill.module.css";
+import styles from "./SpotifyPill.module.scss";
 
 interface SpotifyPillProps {
   spotifyEmbedLink: string;

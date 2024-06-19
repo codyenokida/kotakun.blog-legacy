@@ -5,7 +5,7 @@ import classNames from "classnames";
 
 import ThemeScript from "@/lib/ThemeScript";
 
-import "./globals.css";
+import "./globals.scss";
 
 const fontLora = Lora({
   weight: ["400", "500", "700"],
