@@ -15,4 +15,11 @@ declare global {
     date: string;
     tags: string[];
   };
+
+  type ImageMeta = {
+    type: "landscape" | "portrait";
+    src: string;
+    alt: string;
+    caption?: string;
+  };
 }
