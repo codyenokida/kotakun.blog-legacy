@@ -63,7 +63,7 @@ const postList = {
       id: "vietnam-one",
       title: "Vietnam (Part 1)",
       description:
-        "The first week in Vietnam. From Hanoi to Ninh Bình, my observations of this new country.",
+        "The first week in Vietnam. From Hanoi to Huế, my observations of this new country.",
       datePosted: new Date("02/14/2024"),
     },
     {

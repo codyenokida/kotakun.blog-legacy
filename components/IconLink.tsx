@@ -12,7 +12,7 @@ export default function IconLink({ href, text }: IconLinkProps) {
   return (
     <Link href={href} className={styles.link}>
       <FaChevronLeft />
-      {text}
+      <span>{text}</span>
     </Link>
   );
 }
