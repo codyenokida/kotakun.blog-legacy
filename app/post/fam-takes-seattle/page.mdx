@@ -1,6 +1,7 @@
 import BlockQuote from "@/components/BlockQuote";
 import HeroImage from "@/components/HeroImage";
 import IconLink from "@/components/IconLink";
+import ImageFormatter from "@/components/ImageFormatter";
 
 <IconLink href="/" text="Home" />
 
@@ -51,3 +52,40 @@ Thank you for the good memories Seattle and Fam!!
 これからは無職の生活！！
 
 できる限り、存分に楽しみます。また後ほど。😗
+
+<ImageFormatter
+  imageSources={[
+    {
+      src: "/posts/fam-takes-seattle/fam-at-airport.jpeg",
+      alt: "Meeting my parents at SFO",
+      caption: "Metting my parents on a layover in SFO",
+    },
+    {
+      src: "/posts/fam-takes-seattle/enokidas.jpeg",
+      alt: "Selfie of Enokidas",
+      caption: "Enokidas",
+    },
+    {
+      src: "/posts/fam-takes-seattle/marathon-views.jpeg",
+      alt: "Running around Green Lake!",
+      caption: "Running around Green Lake!",
+    },
+  ]}
+/>
+
+<ImageFormatter
+  imageSources={[
+    {
+      type: "landscape",
+      src: "/posts/fam-takes-seattle/marathon-finishers.jpeg",
+      alt: "Race finishers",
+      caption: "Race finishers",
+    },
+    {
+      type: "landscape",
+      src: "/posts/fam-takes-seattle/marathon-fam.jpeg",
+      alt: "More pictures post marathon",
+      caption: "More pics",
+    },
+  ]}
+/>

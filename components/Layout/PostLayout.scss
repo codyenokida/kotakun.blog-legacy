@@ -13,6 +13,11 @@
 
 .content ul {
   margin-left: var(--space-4);
+
+  li {
+    line-height: 28px;
+    font-size: var(--font-size-4);
+  }
 }
 
 .content p {

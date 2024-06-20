@@ -4,6 +4,11 @@
   flex-wrap: wrap;
   gap: var(--space-3);
 
+  .length_1 {
+    width: 400px;
+    margin: 0 auto;
+  }
+
   .length_2 {
     width: calc((100% - var(--space-3)) / 2);
   }
@@ -19,20 +24,32 @@
     border-radius: var(--border-radius-xs);
   }
 
+  .length_1.portrait .image {
+    height: 560px;
+  }
+
+  .length_1.landscape {
+    width: 440px;
+  }
+
+  .length_1.landscape .image {
+    height: 300px;
+  }
+
   .length_2.portrait .image {
     height: 560px;
   }
 
   .length_3.portrait .image {
-    height: 360px;
+    height: 400px;
   }
 
   .length_2.landscape .image {
-    height: 260px;
+    height: 300px;
   }
 
   .length_3.landscape .image {
-    height: 200px;
+    height: 220px;
   }
 
   .caption {
@@ -51,12 +68,20 @@
 // Medium devices (tablets, 768px and up)
 @media (max-width: 768px) and (min-width: 621px) {
   .container {
+    .length_1.portrait .image {
+      height: 560px;
+    }
+
     .length_2.portrait .image {
       height: 460px;
     }
 
     .length_3.portrait .image {
       height: 320px;
+    }
+
+    .length_1.landscape .image {
+      height: 440px;
     }
 
     .length_2.landscape .image {
@@ -75,6 +100,7 @@
     flex-direction: column;
     flex-wrap: nowrap;
 
+    .length_1,
     .length_2,
     .length_3 {
       width: 100%;

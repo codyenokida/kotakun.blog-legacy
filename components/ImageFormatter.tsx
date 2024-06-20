@@ -31,6 +31,7 @@ export default function ImageFormatter({
       {imageSources.map((imageSource) => (
         <div
           className={classNames(styles.imageWrapper, {
+            [styles.length_1]: length === 1,
             [styles.length_2]: length === 2,
             [styles.length_3]: length === 3,
             [styles.portrait]:
