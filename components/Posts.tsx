@@ -12,13 +12,6 @@ const postList = {
       datePosted: new Date("06/09/2024"),
     },
     {
-      id: "mexico",
-      title: "A Throwback to Mexico",
-      description:
-        "A trip down memory lane to my first bikepacking trip in Mexico.",
-      datePosted: new Date("05/15/2024"),
-    },
-    {
       id: "surfing-the-internet",
       title: "Surfing the Internet",
       description:
