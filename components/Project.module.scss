@@ -1,0 +1,124 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-4);
+  margin-top: var(--space-3);
+
+  .image {
+    position: relative;
+    width: 400px;
+    height: 260px;
+    border-radius: var(--border-radius-xs);
+
+    .bgImage {
+      position: absolute;
+      border-radius: var(--border-radius-xs);
+      top: 0;
+      left: 0;
+      width: 400px;
+      height: 260px;
+    }
+
+    .fgImage {
+      position: absolute;
+      border-radius: var(--border-radius-xs);
+      width: 384px;
+      height: 244px;
+      top: 8px;
+      left: 8px;
+    }
+  }
+
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+
+    span {
+      color: rgb(var(--color-description-text));
+      font-weight: 500;
+    }
+
+    .green {
+      color: rgb(var(--color-brand));
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: row;
+      gap: var(--space-3);
+
+      .button {
+        padding: var(--space-2) var(--space-3);
+        border: 2px solid rgb(var(--foreground-rgb));
+        border-radius: var(--border-radius-xs);
+        color: rgb(var(--foreground-rgb));
+        text-decoration: none;
+
+        .button_style {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: var(--space-1);
+
+          svg {
+            position: relative;
+            transform: rotate(45deg);
+            transition: all 0.4s;
+          }
+        }
+
+        &:hover {
+          background-color: rgb(var(--color-moss-green-fade));
+
+          svg {
+            transform: rotate(45deg) translateX(1px) translateY(-3px);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (max-width: 992px) and (min-width: 769px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (max-width: 768px) and (min-width: 621px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 620px) {
+  .container {
+    flex-direction: column;
+
+    .image {
+      position: relative;
+      width: 100%;
+      height: 240px;
+      border-radius: var(--border-radius-xs);
+
+      .bgImage {
+        position: absolute;
+        border-radius: var(--border-radius-xs);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 240px;
+      }
+
+      .fgImage {
+        position: absolute;
+        width: calc(100% - 2 * var(--space-2));
+        height: 224px;
+        top: 8px;
+        left: 8px;
+      }
+    }
+  }
+}

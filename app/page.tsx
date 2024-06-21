@@ -11,9 +11,9 @@ export default async function Page() {
     <MainLayout>
       <div className={styles.content}>
         <h1 className={styles.title}>
-          Hi! I'm <strong className={styles.name}>Kota Enokida</strong>, this is
-          my blog where I share a slice of my life as a curious 24yo navigating
-          this huge planet
+          Hi! I&apos;m <strong className={styles.name}>Kota Enokida</strong>,
+          this is my blog where I share a slice of my life as a curious 24yo
+          navigating this huge planet
           <span className={styles.worldContainer}>
             {". "}
             <Image
