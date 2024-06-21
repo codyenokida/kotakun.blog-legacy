@@ -18,6 +18,16 @@
   color: rgba(var(--color-brand));
 }
 
+.worldContainer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.world {
+  margin-left: var(--space-1);
+}
+
 .textLink:hover {
   /* transform: translateY(10px); */
   margin-bottom: 10px;

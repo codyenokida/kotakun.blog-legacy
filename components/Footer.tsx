@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { currentLocation } from "@/utils/const";
 import styles from "./Footer.module.scss";
 
 export default function Footer() {
@@ -15,10 +16,14 @@ export default function Footer() {
             <Link href="/projects">Portfolio</Link>
             <Link href="/subscribe">Subscribe</Link>
           </div>
+          <div className={styles.links}>
+            <Link href="https://github.com/codyenokida">Github</Link>
+            <Link href="https://x.com/hammockman3000">Twitter</Link>
+          </div>
         </div>
         <div className={styles.ender}>
           <span>
-            Kota Cody Enokida - <Link href="/now">Irvine, CA</Link>
+            Kota Cody Enokida - <Link href="/now">{currentLocation}</Link>
           </span>
         </div>
       </div>
