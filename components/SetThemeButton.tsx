@@ -1,9 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import classNames from "classnames";
+
+import Moon from "@/public/moon.svg";
+import Sun from "@/public/sun.svg";
 
 import styles from "./SetThemeButton.module.scss";
-import classNames from "classnames";
 
 const SetThemeButton = ({ style }: any) => {
   const [theme, setTheme] = useState(global.window?.__theme || "light");
@@ -20,13 +23,11 @@ const SetThemeButton = ({ style }: any) => {
 
   return (
     <button className={styles.button} style={style} onClick={toggleTheme}>
-      <img
-        src={isDark ? "/moon.svg" : "/sun.svg"}
-        alt={isDark ? "moon icon" : "sun icon"}
-        className={classNames(styles.svg, {
-          [styles.dark]: isDark,
-        })}
-      />
+      {isDark ? (
+        <Moon className={classNames(styles.svg, styles.dark)} />
+      ) : (
+        <Sun className={classNames(styles.svg, styles.light)} />
+      )}
     </button>
   );
 };

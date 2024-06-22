@@ -44,7 +44,7 @@
 .span {
   font-size: var(--font-size-6);
   line-height: 30px;
-  color: rgb(var(--logo-color));
+  color: rgb(var(--foreground-rgb));
   font-weight: 700;
 }
 
@@ -52,7 +52,7 @@
   position: absolute;
   transition-duration: 0.5s;
   transition-property: left;
-  color: rgb(var(--logo-color));
+  color: rgb(var(--foreground-rgb));
   font-weight: 700;
 }
 
@@ -71,7 +71,11 @@
 .svg {
   height: 28px;
   width: 30px;
-  filter: var(--svg-filter-mask);
+  // filter: var(--svg-filter-mask);
+
+  path {
+    fill: rgb(var(--logo-color));
+  }
 }
 
 .logo:hover .svg {

@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import styles from "./Project.module.scss";
 import { FaArrowUp } from "react-icons/fa";
+import classNames from "classnames";
 
 type ProjectProps = {
   src: string;
@@ -50,11 +51,11 @@ export default function Project({
           {projectTitle} <span className={styles.green}>•</span>{" "}
           <span>{role}</span>
         </h2>
-        <p>{description}</p>
         <p>
           <strong>Technologies: </strong>
           {technologies}
         </p>
+        <p>{description}</p>
         <div className={styles.buttons}>
           <Link href={url} className={styles.button}>
             <div className={styles.button_style}>
@@ -63,7 +64,7 @@ export default function Project({
           </Link>
           {githubUrl && (
             <Link href={githubUrl} className={styles.button}>
-              <div className={styles.button_style}>
+              <div className={classNames(styles.button_style, "button")}>
                 Github <FaArrowUp />
               </div>
             </Link>

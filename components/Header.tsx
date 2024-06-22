@@ -1,22 +1,29 @@
 "use client";
 
-import Image from "next/image";
+import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import classNames from "classnames";
 
 import LoadingThemeButton from "@/components/LoadingThemeButton";
+import SplitText from "@/components/SplitText";
+
+import Logo from "@/public/logo.svg";
 
 import styles from "./Header.module.scss";
-import { useEffect, useState } from "react";
-import SplitText from "./SplitText";
-import classNames from "classnames";
 
 const SetThemeButton = dynamic(() => import("@/components/SetThemeButton"), {
   ssr: false,
   loading: () => <LoadingThemeButton />,
 });
 
-export default function Header() {
+type HeaderProps = {
+  marginHeight?: string; // token
+};
+
+export default function Header({
+  marginHeight = "--offsetHeight",
+}: HeaderProps) {
   const [headerHeight, setHeaderHeight] = useState<number>(120);
   const [borderColor, setBorderColor] = useState<
     "transparent" | "rgb(200, 200, 200, 0.5)"
@@ -66,11 +73,7 @@ export default function Header() {
               // onMouseLeave={() => setRevealText(false)}
             >
               <div className={styles.logo}>
-                <img
-                  src="/logo.svg"
-                  alt="kota-kun blog logo"
-                  className={styles.svg}
-                />
+                <Logo className={styles.svg} />
                 <span
                   className={classNames(styles.span, {
                     [styles.revealText]: revealText,
@@ -92,7 +95,10 @@ export default function Header() {
           </div>
         </div>
       </header>
-      <div className={styles.margin} />
+      <div
+        className={styles.margin}
+        style={{ height: `var(${marginHeight})` }}
+      />
     </>
   );
 }

@@ -1,4 +1,5 @@
-const withMDX = require('@next/mdx')()
+const withMDX = require("@next/mdx")();
+const withSvgr = require("next-plugin-svgr");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -17,4 +18,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withMDX(nextConfig);
+module.exports = withSvgr(withMDX(nextConfig));

@@ -1,16 +1,13 @@
 import BlockQuote from "@/components/BlockQuote";
 import HeroImage from "@/components/HeroImage";
-import IconLink from "@/components/IconLink";
 import ImageFormatter from "@/components/ImageFormatter";
 import { currentLocation } from "@/utils/const";
 
-<IconLink href="/" text="Home" />
-
 # Now
 
-This is like an [About](/about) page, but just what's on goin' on right now.
-
-\~~~~~~
+<BlockQuote>
+  This is like an [About](/about) page, but just what's on goin' on right now.
+</BlockQuote>
 
 **Currently:** Studying for some interviews. Writing content for this blog. Worked on a [hackathon](https://devpost.com/software/politicool) recently! Going to Taiwan and Japan next month so stoked and working on building out projects before then!
 
@@ -22,21 +19,6 @@ This is like an [About](/about) page, but just what's on goin' on right now.
 
 **Last updated:** 6/20/2024
 
-\~~~~~~
+----
 
 Inspiration from [Derek Sivers](https://sive.rs/)'s [www.nownownow.com](https://www.nownownow.com)
-
-<ImageFormatter
-  imageSources={[
-    {
-      type: "landscape",
-      src: "/filby.jpeg",
-      alt: "FILBYYYYYYY SO CUTE BUNNY!!",
-    },
-    {
-      type: "landscape",
-      src: "/filby2.jpeg",
-      alt: "FILBYYYYYYY SO CUTE BUNNY!! NOOOO",
-    },
-  ]}
-/>

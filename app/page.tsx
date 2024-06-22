@@ -5,6 +5,7 @@ import Link from "next/link";
 import Posts from "@/components/Posts";
 import MainLayout from "@/components/Layout/MainLayout";
 import Image from "next/image";
+import TextLink from "@/components/TextLink";
 
 export default async function Page() {
   return (
@@ -26,12 +27,10 @@ export default async function Page() {
           </span>
           <br />
           <br />
-          You can find more{" "}
-          <Link href="/about" className={styles.textLink}>
-            about me
-          </Link>
-          , what I&apos;m doing <Link href="/now">now</Link>, and other{" "}
-          <Link href="/projects">fun things</Link> I&apos;ve made on the web.
+          You can find more <TextLink href="/about">about me</TextLink>, what
+          I&apos;m doing <TextLink href="/now">now</TextLink>, and other{" "}
+          <TextLink href="/projects">fun things</TextLink> I&apos;ve made on the
+          web.
         </h1>
         <div className={styles.margin} />
         <Posts />

@@ -1,0 +1,40 @@
+.link {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+
+  &:hover {
+    padding-bottom: 5px;
+    background: url("/wave.svg");
+    background-repeat: repeat;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-size: auto auto;
+    background-repeat: repeat-x;
+    background-size: 20px 40px;
+    background-position: 2px 19px;
+    animation: move 15s linear infinite;
+    -webkit-animation: move 15s linear infinite;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+    animation-play-state: running;
+  }
+}
+
+@-webkit-keyframes move {
+  from {
+    background-position: 2px 19px;
+  }
+  to {
+    background-position: 500px 19px;
+  }
+}
+
+@keyframes move {
+  from {
+    background-position: 2px 19px;
+  }
+  to {
+    background-position: 500px 19px;
+  }
+}

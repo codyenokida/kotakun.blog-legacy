@@ -4,6 +4,7 @@ import styles from "./MainLayout.module.scss";
 import Link from "next/link";
 import Posts from "@/components/Posts";
 import Footer from "../Footer";
+import IconLink from "../IconLink";
 
 interface MainLayoutProps {
   children: React.ReactNode;

@@ -1,14 +1,49 @@
-.content {
+.content,
+.buttons {
   display: grid;
   grid-template-columns: 1fr minmax(auto, var(--max-width)) 1fr;
   column-gap: var(--space-5);
   align-items: stretch;
   gap: var(--space-4);
-  padding-bottom: var(--space-12);
 }
 
-.content * {
+.content *,
+.buttons * {
   grid-column: 2;
+}
+
+.buttons {
+  padding-bottom: var(--space-5);
+}
+
+.content {
+  padding-bottom: var(--space-8);
+}
+
+.content {
+  a {
+    &:not(:has(svg)) {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      &:hover {
+        padding-bottom: 5px;
+        background: url("/wave.svg");
+        background-repeat: repeat;
+        background-position-x: 0%;
+        background-position-y: 0%;
+        background-size: auto auto;
+        background-repeat: repeat-x;
+        background-size: 10px 10px;
+        background-position: 2px 19px;
+        animation: move 15s linear infinite;
+        -webkit-animation: move 15s linear infinite;
+        text-decoration: none;
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects;
+        animation-play-state: running;
+      }
+    }
+  }
 }
 
 .content ul {
@@ -25,4 +60,22 @@
 .content p {
   line-height: 30px;
   font-size: var(--font-size-4);
+}
+
+@-webkit-keyframes move {
+  from {
+    background-position: 2px 19px;
+  }
+  to {
+    background-position: 500px 19px;
+  }
+}
+
+@keyframes move {
+  from {
+    background-position: 2px 19px;
+  }
+  to {
+    background-position: 500px 19px;
+  }
 }
