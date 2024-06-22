@@ -56,6 +56,10 @@ export default function Header({
     setTimeout(() => {
       setRevealText(true);
     }, 500);
+
+    setTimeout(() => {
+      setRevealText(false);
+    }, 2500);
   }, []);
 
   return (
@@ -69,8 +73,8 @@ export default function Header({
             <Link
               href="/"
               className={styles.link}
-              // onMouseOver={() => setRevealText(true)}
-              // onMouseLeave={() => setRevealText(false)}
+              onMouseOver={() => setRevealText(true)}
+              onMouseLeave={() => setRevealText(false)}
             >
               <div className={styles.logo}>
                 <Logo className={styles.svg} />
@@ -79,8 +83,8 @@ export default function Header({
                     [styles.revealText]: revealText,
                     [styles.hideText]: !revealText,
                   })}
-                  // onMouseOver={() => setRevealText(true)}
-                  // onMouseLeave={() => setRevealText(false)}
+                  onMouseOver={() => setRevealText(true)}
+                  onMouseLeave={() => setRevealText(false)}
                 >
                   {revealText && (
                     <SplitText className={styles.reveal}>kotakun</SplitText>

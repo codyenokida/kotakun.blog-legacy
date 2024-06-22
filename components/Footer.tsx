@@ -10,7 +10,7 @@ export default function Footer() {
           <div className={styles.links}>
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
-            <Link href="/design">Design</Link>
+            {/* <Link href="/design">Design</Link> */}
           </div>
           <div className={styles.links}>
             <Link href="/projects">Portfolio</Link>
