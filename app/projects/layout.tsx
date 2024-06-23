@@ -1,5 +1,5 @@
-import PostLayout from "@/components/Layout/PostLayout";
+import PageLayout from "@/components/Layout/PageLayout";
 
 export default function MdxLayout({ children }: { children: React.ReactNode }) {
-  return <PostLayout>{children}</PostLayout>;
+  return <PageLayout>{children}</PageLayout>;
 }

@@ -1,5 +1,6 @@
 .content,
 .buttons {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr minmax(auto, var(--max-width)) 1fr;
   column-gap: var(--space-5);

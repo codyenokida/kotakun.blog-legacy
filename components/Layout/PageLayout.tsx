@@ -16,7 +16,6 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
         </div>
         <div className="content">{children}</div>
       </Transition>
-      <Comments />
       <Footer />
     </main>
   );
