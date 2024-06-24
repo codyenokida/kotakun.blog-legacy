@@ -67,7 +67,7 @@ const postList = {
       datePosted: new Date("01/29/2024"),
     },
     {
-      id: "reflection-of-bay-area",
+      id: "goodbye-bay-area",
       title: "A Reflection of the Bay Area",
       description:
         "A farewell message to Mountain View and San Fransisco which was my home for the past 2 years.",
@@ -76,7 +76,7 @@ const postList = {
   ],
   2023: [
     {
-      id: "what-comes-next",
+      id: "what-comes-next-2024",
       title: "What Comes Next?",
       description:
         "A New Years Resolution and a look back on the previous year.",

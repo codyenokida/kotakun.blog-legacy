@@ -22,4 +22,17 @@ declare global {
     alt: string;
     caption?: string;
   };
+
+  // Blog Post Types
+
+  interface CommentData {
+    id: string;
+    comments: Comment[];
+  }
+
+  interface Comment {
+    datePosted: Timestamp;
+    author: string;
+    content: string;
+  }
 }

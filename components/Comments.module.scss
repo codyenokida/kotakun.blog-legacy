@@ -30,13 +30,9 @@
   }
 
   .button:hover {
-    /* transform: translateY(-1px); */
-    background-color: rgba(var(--color-moss-green-fade));
     transition-duration: 0.6s ease;
-    /* transition-property: width, height; */
     border: 2px solid rgba(var(--foreground-rgb));
     border-radius: 10px;
-    /* box-shadow: 2px 2px 1px 1px rgba(var(--color-moss-green-fade)); */
   }
 
   .button:active {
@@ -85,6 +81,51 @@
         border-radius: var(--border-radius-xs);
         height: var(--space-13);
       }
+    }
+
+    .postButton {
+      background-color: transparent;
+      border: 1px solid rgba(var(--foreground-rgb));
+      border-radius: var(--border-radius-xs);
+      padding: var(--space-2);
+      font-weight: 700;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba(var(--color-moss-green-fade));
+        transition-duration: 0.25s;
+      }
+    }
+
+    .error {
+      margin: 0 auto;
+      color: rgb(237, 95, 95);
+    }
+  }
+}
+
+.commentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+
+  .commentText {
+    border-top: 1px solid rgb(var(--color-border-gray));
+
+    h4 {
+      margin: var(--space-2) 0;
+
+      span {
+        color: rgb(var(--color-description-text));
+        font-weight: 500;
+      }
+
+      .green {
+        color: rgb(var(--color-brand));
+      }
+    }
+    p {
+      line-height: 30px;
     }
   }
 }

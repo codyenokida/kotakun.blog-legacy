@@ -140,6 +140,8 @@ ol {
 
 input,
 textarea {
+  font-family: inherit;
   background-color: rgba(var(--color-input-bg));
   border: 1px solid rgba(var(--color-input-border));
+  padding: var(--space-2);
 }
