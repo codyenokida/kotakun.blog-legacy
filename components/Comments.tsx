@@ -7,7 +7,11 @@ import { useEffect, useRef, useState } from "react";
 import HandWaveIcon from "@/public/hand-waving.svg";
 import ExitIcon from "@/public/exit.svg";
 
-import { getCommentsFromId, postComment } from "@/lib/firebase/firestore";
+import {
+  getCommentsFromId,
+  migrateComments,
+  postComment,
+} from "@/lib/firebase/firestore";
 import { db } from "@/lib/firebase/firebase";
 import { doc, onSnapshot } from "firebase/firestore";
 

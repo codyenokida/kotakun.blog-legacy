@@ -67,7 +67,7 @@ const postList = {
       datePosted: new Date("01/29/2024"),
     },
     {
-      id: "goodbye-bay-area",
+      id: "reflection-of-bay-area",
       title: "A Reflection of the Bay Area",
       description:
         "A farewell message to Mountain View and San Fransisco which was my home for the past 2 years.",
