@@ -1,7 +1,7 @@
 import Image from "next/image";
+import classNames from "classnames";
 
 import styles from "./ImageFormatter.module.scss";
-import classNames from "classnames";
 
 type ImageFormatterProps = {
   imageSources: ImageMeta[];

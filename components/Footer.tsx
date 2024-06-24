@@ -1,5 +1,7 @@
 import Link from "next/link";
+
 import { currentLocation } from "@/utils/const";
+
 import styles from "./Footer.module.scss";
 
 export default function Footer() {

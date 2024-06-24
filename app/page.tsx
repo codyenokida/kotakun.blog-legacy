@@ -1,11 +1,11 @@
-import Header from "@/components/Header";
+import Image from "next/image";
+import { Analytics } from "@vercel/analytics/react";
 
-import styles from "./page.module.scss";
-import Link from "next/link";
 import Posts from "@/components/Posts";
 import MainLayout from "@/components/Layout/MainLayout";
-import Image from "next/image";
 import TextLink from "@/components/TextLink";
+
+import styles from "./page.module.scss";
 
 export default async function Page() {
   return (
@@ -35,6 +35,7 @@ export default async function Page() {
         <div className={styles.margin} />
         <Posts />
       </div>
+      <Analytics />
     </MainLayout>
   );
 }

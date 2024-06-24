@@ -1,20 +1,17 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 
 import HandWaveIcon from "@/public/hand-waving.svg";
 import ExitIcon from "@/public/exit.svg";
 
-import styles from "./Comments.module.scss";
-import { useEffect, useRef, useState } from "react";
-import {
-  getCommentsFromId,
-  migrateComments,
-  postComment,
-} from "@/lib/firebase/firestore";
-import { doc, onSnapshot } from "firebase/firestore";
+import { getCommentsFromId, postComment } from "@/lib/firebase/firestore";
 import { db } from "@/lib/firebase/firebase";
+import { doc, onSnapshot } from "firebase/firestore";
+
+import styles from "./Comments.module.scss";
 
 export default function Comments() {
   const commentRef = useRef<HTMLDivElement>(null);
