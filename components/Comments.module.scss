@@ -15,6 +15,8 @@
     border: 2px solid rgba(var(--foreground-rgb));
     border-radius: var(--border-radius-xs);
     cursor: pointer;
+    z-index: 100;
+    position: relative;
 
     .icon {
       width: 24px;
@@ -56,11 +58,45 @@
 .comments {
   position: fixed;
   background-color: rgba(var(--background-rgb));
-  width: 420px;
-  height: 620px;
+  width: 380px;
+  height: 540px;
   border: 2px solid rgba(var(--foreground-rgb));
   border-radius: var(--border-radius-xs);
   overflow-y: scroll;
+  z-index: 1001;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-4);
+
+    .inputContainer {
+      display: flex;
+      flex-direction: column;
+
+      .nameInput {
+        border: 1px solid rgba(var(--foreground-rgb));
+        border-radius: var(--border-radius-xs);
+      }
+
+      .contentInput {
+        border: 1px solid rgba(var(--foreground-rgb));
+        border-radius: var(--border-radius-xs);
+        height: var(--space-13);
+      }
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0, 0, 0, 0.1);
+  z-index: 99;
 }
 
 // Large devices (desktops, 992px and up)
@@ -86,7 +122,7 @@
     position: fixed;
     background-color: rgba(var(--background-rgb));
     width: calc(100% - 2 * var(--space-4));
-    height: 620px;
+    height: 540px;
     border: 2px solid rgba(var(--foreground-rgb));
     border-radius: var(--border-radius-xs);
     overflow-y: scroll;
