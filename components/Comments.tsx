@@ -28,7 +28,6 @@ export default function Comments() {
    * Utility states
    */
   const [commentsOpen, setCommentsOpen] = useState<boolean>(false);
-  const [isMobile, setIsMobile] = useState(false);
 
   /**
    * Comment state
@@ -148,8 +147,10 @@ export default function Comments() {
   return (
     <div className={styles.container}>
       <h2>
-        Leave any thoughts or comments here!{" "}
-        <ThoughtsIcon className={styles.icon} />
+        Leave any thoughts or comments
+        <span>
+          {" "} here! <ThoughtsIcon className={styles.icon} />
+        </span>
       </h2>
       {comments.length === 0 && <p>No comments, yet... chime in!</p>}
       {comments.length !== 0 && renderComments()}
