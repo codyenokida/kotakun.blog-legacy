@@ -1,7 +1,8 @@
 import { FaArrowUp } from "react-icons/fa";
 import classNames from "classnames";
-import Image from "next/image";
 import Link from "next/link";
+
+import DynamicBlurImage from "@/components/DynamicBlurImage";
 
 import styles from "./Project.module.scss";
 
@@ -31,14 +32,14 @@ export default function Project({
   return (
     <div className={styles.container}>
       <div className={styles.image}>
-        <Image
+        <DynamicBlurImage
           src={bgSrc}
           alt={`background image for ${projectTitle}`}
           width={1200}
           height={1200}
           className={styles.bgImage}
         />
-        <Image
+        <DynamicBlurImage
           src={src}
           alt={alt}
           width={1200}

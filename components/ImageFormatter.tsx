@@ -1,8 +1,8 @@
-import Image from "next/image";
 import classNames from "classnames";
 
+import DynamicBlurImage from "@/components/DynamicBlurImage";
+
 import styles from "./ImageFormatter.module.scss";
-import DynamicBlurImage from "./DynamicBlurImage";
 
 type ImageFormatterProps = {
   imageSources: ImageMeta[];
