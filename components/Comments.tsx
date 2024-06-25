@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
-import HandWaveIcon from "@/public/hand-waving.svg";
+import ThoughtsIcon from "@/public/thoughts.svg";
 import ExitIcon from "@/public/exit.svg";
 
 import {
@@ -16,6 +16,8 @@ import { db } from "@/lib/firebase/firebase";
 import { doc, onSnapshot } from "firebase/firestore";
 
 import styles from "./Comments.module.scss";
+import TextInput from "./TextInput";
+import TextArea from "./TextArea";
 
 export default function Comments() {
   const commentRef = useRef<HTMLDivElement>(null);
@@ -87,48 +89,6 @@ export default function Comments() {
     }
   }, [pathValue]);
 
-  /**
-   * Check if mobile
-   */
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
-  /**
-   * Re-style html and body so they are not scrollable
-   */
-  useEffect(() => {
-    if (commentsOpen && isMobile) {
-      const html = document.querySelector("html");
-
-      document.body.style.overflow = "hidden";
-      document.body.style.touchAction = "none";
-
-      if (html && html instanceof HTMLElement) {
-        html.style.overflow = "hidden";
-        html.style.touchAction = "none";
-      }
-
-      // Cleanup function to remove the style when component unmounts
-      return () => {
-        document.body.style.overflow = "auto";
-        document.body.style.touchAction = "auto";
-
-        if (html && html instanceof HTMLElement) {
-          html.style.overflow = "auto";
-          html.style.touchAction = "auto";
-        }
-      };
-    }
-  }, [commentsOpen, isMobile]);
-
   useEffect(() => {
     const handleClickOutside = (event: any) => {
       if (
@@ -192,129 +152,22 @@ export default function Comments() {
 
   return (
     <div className={styles.container}>
-      <motion.button
-        ref={buttonRef}
-        className={styles.button}
-        initial={{ y: 30, opacity: 0, rotate: -45 }}
-        animate={{ y: 0, opacity: 1, rotate: [-20, 0] }}
-        transition={{ ease: "circOut", duration: 0.45, delay: 0.5 }}
-        onClick={() => setCommentsOpen(!commentsOpen)}
+      <h2>
+        Leave any thoughts or comments here!{" "}
+        <ThoughtsIcon className={styles.icon} />
+      </h2>
+      {comments.length === 0 && <p>No comments, yet... chime in!</p>}
+      {comments.length !== 0 && renderComments()}
+      <TextInput value={author} setValue={setAuthor} labelText="Name" />
+      <TextArea value={content} setValue={setContent} labelText="Content" />
+      <button
+        className={styles.postButton}
+        onClick={handlePostClick}
+        disabled={loading || !(author && content)}
       >
-        <motion.div
-          initial={{ rotate: 0 }}
-          animate={{ rotate: [0, 20, -20, 20, -20, 0] }}
-          transition={{ ease: "easeInOut", duration: 0.45, delay: 1 }}
-          className={styles.icon}
-        >
-          {commentsOpen ? (
-            <ExitIcon className={styles.exit} />
-          ) : (
-            <HandWaveIcon />
-          )}
-        </motion.div>
-      </motion.button>
-      <motion.div
-        ref={commentRef}
-        initial={{
-          right: 0,
-          bottom: 64,
-          opacity: 0,
-          display: "none",
-          height: 38,
-        }}
-        animate={
-          commentsOpen
-            ? {
-                right: 16,
-                bottom: 64,
-                opacity: 1,
-                display: "flex",
-                height: [38, isMobile ? 480 : 600],
-              }
-            : {
-                right: 16,
-                bottom: 64,
-                opacity: 0,
-                display: "none",
-                height: [isMobile ? 480 : 600, 38],
-                width: 0,
-              }
-        }
-        transition={{
-          ease: "backInOut",
-          duration: 0.6,
-          damping: 10,
-          spring: 1,
-        }}
-        className={styles.comments}
-      >
-        {commentsOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={
-              commentsOpen
-                ? {
-                    opacity: 1,
-                    y: [8, 0],
-                  }
-                : {
-                    opacity: 0,
-                  }
-            }
-            transition={{
-              ease: "backInOut",
-              duration: 0.4,
-              delay: 0.5,
-            }}
-            className={styles.content}
-          >
-            <h2>Leave any thoughts or comments here!</h2>
-            {comments.length === 0 && <p>No comments, yet... chime in!</p>}
-            {comments.length !== 0 && renderComments()}
-            <div className={styles.inputContainer}>
-              <label>Name</label>
-              <input
-                value={author}
-                onChange={(e) => setAuthor(e.target.value)}
-                className={styles.nameInput}
-              />
-            </div>
-            <div className={styles.inputContainer}>
-              <label>Content</label>
-              <textarea
-                value={content}
-                onChange={(e) => setContent(e.target.value)}
-                className={styles.contentInput}
-              />
-            </div>
-            <button
-              className={styles.postButton}
-              onClick={handlePostClick}
-              disabled={loading}
-            >
-              {loading ? "Loading..." : "Post!"}
-            </button>
-            {error && <span className={styles.error}>{error}</span>}
-            <br />
-          </motion.div>
-        )}
-      </motion.div>
-      <AnimatePresence>
-        {isMobile && commentsOpen && (
-          <motion.div
-            animate={{
-              opacity: [0, 1],
-            }}
-            transition={{
-              ease: "backInOut",
-              duration: 0.6,
-              damping: 10,
-              spring: 1,
-            }}
-            className={styles.modal}
-          />
-        )}
-      </AnimatePresence>
+        Post!
+      </button>
+      {error && <span className={styles.error}>{error}</span>}
     </div>
   );
 }

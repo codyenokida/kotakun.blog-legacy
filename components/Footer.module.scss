@@ -18,15 +18,34 @@
   gap: var(--space-8);
 }
 
-.linkWrapper {
+.links {
   display: flex;
   width: 100%;
   justify-content: flex-start;
   gap: var(--space-8);
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    gap: vaR(--space-4);
+  }
 }
 
-.links {
-  display: flex;
-  flex-direction: column;
-  gap: vaR(--space-4);
+.info {
+  span {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+
+    .now {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
 }

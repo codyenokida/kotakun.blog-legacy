@@ -14,9 +14,10 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
         <div className="buttons">
           <IconLink href="/" text="Home" />
         </div>
-        <div className="content">{children}</div>
+        <div className="content">
+          {children} <Comments />
+        </div>
       </Transition>
-      <Comments />
       <Footer />
     </main>
   );

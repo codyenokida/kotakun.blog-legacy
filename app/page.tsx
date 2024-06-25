@@ -5,6 +5,8 @@ import Posts from "@/components/Posts";
 import MainLayout from "@/components/Layout/MainLayout";
 import TextLink from "@/components/TextLink";
 
+import EarthIcon from "@/public/earth.svg";
+
 import styles from "./page.module.scss";
 
 export default async function Page() {
@@ -14,16 +16,9 @@ export default async function Page() {
         <h1 className={styles.title}>
           Hi! I&apos;m <strong className={styles.name}>Kota Enokida</strong>,
           this is my blog where I share a slice of my life as a curious 24yo
-          navigating this huge planet
-          <span className={styles.worldContainer}>
-            {". "}
-            <Image
-              src="/world.png"
-              alt=""
-              width={32}
-              height={32}
-              className={styles.world}
-            />
+          navigating this huge earth.
+          <span className={styles.earth}>
+            <EarthIcon />
           </span>
           <br />
           <br />
