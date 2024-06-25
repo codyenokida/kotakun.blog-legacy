@@ -1,23 +1,18 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 import ThoughtsIcon from "@/public/thoughts.svg";
-import ExitIcon from "@/public/exit.svg";
 
-import {
-  getCommentsFromId,
-  migrateComments,
-  postComment,
-} from "@/lib/firebase/firestore";
+import TextInput from "@/components/TextInput";
+import TextArea from "@/components/TextArea";
+
+import { getCommentsFromId, postComment } from "@/lib/firebase/firestore";
 import { db } from "@/lib/firebase/firebase";
 import { doc, onSnapshot } from "firebase/firestore";
 
 import styles from "./Comments.module.scss";
-import TextInput from "./TextInput";
-import TextArea from "./TextArea";
 
 export default function Comments() {
   const commentRef = useRef<HTMLDivElement>(null);

@@ -1,5 +1,3 @@
-import React from "react";
-
 import styles from "./SplitText.module.scss";
 
 const SplitText = ({ children, delay = 20 }: any) => {

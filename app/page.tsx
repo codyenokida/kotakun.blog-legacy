@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Analytics } from "@vercel/analytics/react";
 
 import Posts from "@/components/Posts";

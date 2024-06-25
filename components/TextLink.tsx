@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import styles from "./TextLink.module.scss";
 
 type TextLinkProps = {

@@ -1,9 +1,9 @@
+import { FaArrowUp } from "react-icons/fa";
+import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
 
 import styles from "./Project.module.scss";
-import { FaArrowUp } from "react-icons/fa";
-import classNames from "classnames";
 
 type ProjectProps = {
   src: string;

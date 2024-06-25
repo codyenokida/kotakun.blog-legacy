@@ -4,8 +4,9 @@ import { useState } from "react";
 
 import TextInput from "@/components/TextInput";
 
-import styles from "./page.module.scss";
 import { addToEmaiList } from "@/lib/firebase/firestore";
+
+import styles from "./page.module.scss";
 
 export default function Page() {
   const [name, setName] = useState<string>("");

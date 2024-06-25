@@ -2,6 +2,7 @@ import Image from "next/image";
 import classNames from "classnames";
 
 import styles from "./ImageFormatter.module.scss";
+import DynamicBlurImage from "./DynamicBlurImage";
 
 type ImageFormatterProps = {
   imageSources: ImageMeta[];
@@ -40,7 +41,7 @@ export default function ImageFormatter({
           })}
           key={imageSource.alt}
         >
-          <Image
+          <DynamicBlurImage
             src={imageSource.src}
             alt={imageSource.alt}
             width={1200}
