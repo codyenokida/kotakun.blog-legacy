@@ -14,7 +14,7 @@ const fontLora = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "A Small Peek into my Life.",
+  title: "a peek into my life",
   description: "Blog by Kota Cody Enokida using NextJS and Google Firebase",
 };
 
