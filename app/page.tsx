@@ -27,6 +27,7 @@ export default async function Page() {
           web.
         </h1>
         <div className={styles.margin} />
+        <h2 className={styles.subtitle}>All Articles</h2>
         <Posts />
       </div>
       <Analytics />

@@ -1,0 +1,25 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  align-self: baseline;
+  background-color: transparent;
+  border: 2px solid rgb(var(--foreground-rgb));
+  border-radius: var(--border-radius-xs);
+  padding: var(--space-1) var(--space-3);
+  line-height: 28px;
+  font-size: var(--font-size-3);
+  font-weight: 700;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(var(--color-button-bg-hover));
+  }
+
+  // disabled state
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}

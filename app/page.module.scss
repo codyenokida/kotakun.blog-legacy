@@ -2,95 +2,45 @@
   display: grid;
   grid-template-columns: 1fr minmax(auto, var(--max-width)) 1fr;
   column-gap: var(--space-5);
+  row-gap: var(--space-4);
   align-items: stretch;
-}
 
-.title {
-  grid-column: 2;
-  font-weight: var(--font-weight-500);
-}
-
-.textLink {
-  position: relative;
-}
-
-.name {
-  color: rgba(var(--color-brand));
-}
-
-.earth {
-  display: inline-flex;
-  align-items: center;
-  justify-content: flex-end;
-  margin-left: var(--space-1);
-  
-  svg {
-    width: 34px;
-    height: 34px;
+  & > * {
+    grid-column: 2;
   }
-}
 
-.world {
-  margin-left: var(--space-1);
-}
+  .title {
+    font-weight: var(--font-weight-500);
 
-.textLink:hover {
-  /* transform: translateY(10px); */
-  margin-bottom: 10px;
-}
+    .name {
+      color: rgba(var(--color-brand));
+    }
 
-.textLink::before {
-  position: absolute;
-  /* content: url("/question-mark.svg"); */
-  line-height: 36px;
-  font-size: 36px;
-  width: 36px;
-  height: 36px;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, 50%);
-  opacity: 0;
-  pointer-events: none;
-  filter: var(--svg-filter-mask);
-}
+    .earth {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-left: var(--space-1);
 
-.textLink:hover::before {
-  opacity: 1;
-  transform: translate(-50%, -80%);
-  animation: pop-up 0.15s ease;
-}
+      svg {
+        width: 34px;
+        height: 34px;
+      }
+    }
 
-.margin {
-  width: 100%;
-  height: var(--offsetHeight);
-  grid-column: 2;
-  border-bottom: 1px solid rgba(var(--color-border-gray));
-}
-
-.dateTitle {
-  grid-column: 2;
-  margin-top: var(--space-3);
-}
-
-@keyframes pop-up {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, 50%);
+    .world {
+      margin-left: var(--space-1);
+    }
   }
-  20% {
-    opacity: 0.3;
-    transform: translate(-50%, 0%);
+
+  .margin {
+    width: 100%;
+    height: var(--offsetHeight);
+    grid-column: 2;
   }
-  50% {
-    opacity: 0.6;
-    transform: translate(-50%, -36%);
-  }
-  80% {
-    opacity: 0.8;
-    transform: translate(-50%, -60%);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, -70%);
+
+  .subtitle {
+    border-bottom: 2px solid rgba(var(--color-border-gray));
+    padding-bottom: var(--space-4);
   }
 }

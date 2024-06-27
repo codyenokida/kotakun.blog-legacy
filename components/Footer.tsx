@@ -14,9 +14,10 @@ export default function Footer() {
           <div className={styles.column}>
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
-            {/* <Link href="/design">Design</Link> */}
+            <Link href="/now">Now</Link>
           </div>
           <div className={styles.column}>
+            <Link href="/design-system">Design</Link>
             <Link href="/projects">Portfolio</Link>
             <Link href="/subscribe">Subscribe</Link>
           </div>

@@ -44,7 +44,7 @@
   --offsetHeight: var(--space-14);
 
   /* Color tokens */
-  --color-beige: 240, 238, 240;
+  --color-beige: 246, 244, 236;
   --color-off-white: 210, 210, 210;
   --color-black: 15, 15, 15;
   --color-light-blue: 200, 220, 252, 0.1;
@@ -59,6 +59,9 @@
 
   /* Border color tokens */
   --color-border-gray: 200, 200, 200, 0.3;
+
+  /* Button color tokens */
+  --color-button-bg-hover: var(--color-moss-green-fade);
 
   /* Width tokens */
   --max-width: 880px;
@@ -142,6 +145,6 @@ input,
 textarea {
   font-family: inherit;
   background-color: rgba(var(--color-input-bg));
-  border: 1px solid rgba(var(--color-input-border));
+  border: 2px solid rgba(var(--color-input-border));
   padding: var(--space-1) var(--space-2);
 }

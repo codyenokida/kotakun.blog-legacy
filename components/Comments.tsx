@@ -13,6 +13,7 @@ import { db } from "@/lib/firebase/firebase";
 import { doc, onSnapshot } from "firebase/firestore";
 
 import styles from "./Comments.module.scss";
+import PostCommentButton from "./Buttons/PostCommentButton";
 
 export default function Comments() {
   const commentRef = useRef<HTMLDivElement>(null);
@@ -149,20 +150,18 @@ export default function Comments() {
       <h2>
         Leave any thoughts or comments
         <span>
-          {" "} here! <ThoughtsIcon className={styles.icon} />
+          {" "}
+          here! <ThoughtsIcon className={styles.icon} />
         </span>
       </h2>
       {comments.length === 0 && <p>No comments, yet... chime in!</p>}
       {comments.length !== 0 && renderComments()}
       <TextInput value={author} setValue={setAuthor} labelText="Name" />
-      <TextArea value={content} setValue={setContent} labelText="Content" />
-      <button
-        className={styles.postButton}
+      <TextArea value={content} setValue={setContent} labelText="Comment" />
+      <PostCommentButton
         onClick={handlePostClick}
         disabled={loading || !(author && content)}
-      >
-        Post!
-      </button>
+      />
       {error && <span className={styles.error}>{error}</span>}
     </div>
   );
