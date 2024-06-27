@@ -43,4 +43,20 @@
     border-bottom: 2px solid rgba(var(--color-border-gray));
     padding-bottom: var(--space-4);
   }
+
+  h2 {
+    display: inline-flex;
+    align-items: center;
+    .lightbulb {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-right: var(--space-2);
+
+      svg {
+        width: 40px;
+        height: 45px;
+      }
+    }
+  }
 }

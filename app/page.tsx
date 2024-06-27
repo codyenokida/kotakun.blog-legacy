@@ -5,6 +5,7 @@ import MainLayout from "@/components/Layout/MainLayout";
 import TextLink from "@/components/TextLink";
 
 import EarthIcon from "@/public/earth.svg";
+import LightBulbIcon from "@/public/lightbulb.svg";
 
 import styles from "./page.module.scss";
 
@@ -27,7 +28,12 @@ export default async function Page() {
           web.
         </h1>
         <div className={styles.margin} />
-        <h2 className={styles.subtitle}>All Articles</h2>
+        <h2 className={styles.subtitle}>
+          <span className={styles.lightbulb}>
+            <LightBulbIcon />
+          </span>{" "}
+          All Posts
+        </h2>
         <Posts />
       </div>
       <Analytics />
