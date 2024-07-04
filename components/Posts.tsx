@@ -1,9 +1,15 @@
-import { useRef } from "react";
 import styles from "./Posts.module.scss";
 import Link from "next/link";
 
 const postList = {
   2024: [
+    {
+      id: "living-close-to-friends",
+      title: "Living Close To Your Friends",
+      description:
+        "  An anecdote and short dream of how and where I want to live with my friends.",
+      datePosted: new Date("07/04/2024"),
+    },
     {
       id: "pacific-northwest",
       title: "The Great Pacific Northwest",
@@ -70,7 +76,7 @@ const postList = {
       id: "reflection-of-bay-area",
       title: "A Reflection of the Bay Area",
       description:
-        "A farewell message to Mountain View and San Fransisco which was my home for the past 2 years.",
+        "A farewell message to Mountain View and San Francisco which was my home for the past 2 years.",
       datePosted: new Date("01/16/2024"),
     },
   ],
