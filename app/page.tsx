@@ -8,6 +8,7 @@ import EarthIcon from "@/public/earth.svg";
 import LightBulbIcon from "@/public/lightbulb.svg";
 
 import styles from "./page.module.scss";
+import FeaturedPosts from "@/components/FeaturedPosts";
 
 export default async function Page() {
   return (
@@ -32,8 +33,12 @@ export default async function Page() {
           <span className={styles.lightbulb}>
             <LightBulbIcon />
           </span>{" "}
-          All Posts
+          Featured
         </h2>
+        <FeaturedPosts />
+        <div className={styles.margin} />
+
+        <h2 className={styles.subtitle}>All Posts</h2>
         <Posts />
       </div>
       <Analytics />
