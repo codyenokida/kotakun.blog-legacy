@@ -29,12 +29,7 @@ export default async function Page() {
           web.
         </h1>
         <div className={styles.margin} />
-        <h2 className={styles.subtitle}>
-          {/* <span className={styles.lightbulb}>
-            <LightBulbIcon />
-          </span>{" "} */}
-          Featured
-        </h2>
+        <h2 className={styles.subtitle}>Featured Posts</h2>
         <FeaturedPosts />
         <div className={styles.margin2} />
         <h2 className={styles.subtitle}>All Posts</h2>
