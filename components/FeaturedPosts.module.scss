@@ -6,6 +6,7 @@
 }
 
 .featured {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: var(--space-3);
@@ -16,6 +17,17 @@
   cursor: pointer;
 
   transition: all 0.2s ease-in-out;
+
+  .new {
+    position: absolute;
+    top: -24px;
+    right: -16px;
+
+    svg {
+      width: 48px;
+      height: 48px;
+    }
+  }
 
   &:hover {
     background-color: rgba(var(--color-moss-green-fade));
@@ -31,11 +43,11 @@
   .iconContainer {
     display: flex;
     align-items: center;
-    gap: var(--space-3);
+    gap: var(--space-2);
 
     svg {
-      width: 36px;
-      height: 36px;
+      width: 28px;
+      height: 28px;
       filter: grayscale(0);
       //   filter: grayscale(1);
     }

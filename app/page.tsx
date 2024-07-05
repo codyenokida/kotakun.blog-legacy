@@ -30,14 +30,13 @@ export default async function Page() {
         </h1>
         <div className={styles.margin} />
         <h2 className={styles.subtitle}>
-          <span className={styles.lightbulb}>
+          {/* <span className={styles.lightbulb}>
             <LightBulbIcon />
-          </span>{" "}
+          </span>{" "} */}
           Featured
         </h2>
         <FeaturedPosts />
-        <div className={styles.margin} />
-
+        <div className={styles.margin2} />
         <h2 className={styles.subtitle}>All Posts</h2>
         <Posts />
       </div>

@@ -39,6 +39,12 @@
     grid-column: 2;
   }
 
+  .margin2 {
+    width: 100%;
+    height: 128px;
+    grid-column: 2;
+  }
+
   .subtitle {
     border-bottom: 2px solid rgba(var(--color-border-gray));
     padding-bottom: var(--space-4);
