@@ -2,6 +2,7 @@ import BlockQuote from "@/components/BlockQuote";
 import HeroImage from "@/components/HeroImage";
 import ImageFormatter from "@/components/ImageFormatter";
 import Project from "@/components/Project";
+import BirdIcon from "@/public/bird.svg";
 
 export const metadata = {
   title: "my footprint on the internet",
@@ -57,4 +58,23 @@ export const metadata = {
   description="Dino Babies in Space is the first TV and Comic series built with an NFT-gated community. I built the landing page and logic to claim rewards and interact with your character."
   technologies="React, web3.js, ethers.js"
   url="https://www.dinobabies.io/"
+/>
+
+---
+
+<div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+  <h2 style={{ display: "inline-block", lineHeight: "18px" }}>Just For Fun</h2>
+  <BirdIcon style={{ display: "inline-block", width: 40, height: 40 }} />
+</div>
+
+<Project
+  src="/projects/playground.png"
+  bgSrc="/projects/project-background-2.png"
+  alt="kotakun's digital playground"
+  projectTitle="Playground"
+  role="Design Engineer"
+  description="Just some digital experiements using framer motion, gsap, threejs, and webgl."
+  technologies="React, Framer Motion, WebGL, ThreeJS"
+  url="https://playground.kotakun.blog"
+  githubUrl="https://github.com/codyenokida/playground"
 />
