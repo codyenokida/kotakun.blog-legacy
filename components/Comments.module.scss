@@ -23,7 +23,7 @@
     gap: var(--space-3);
 
     .commentText {
-      border-top: 2px solid rgb(var(--color-border-gray));
+      border-top: 2px solid var(--color-border-gray);
 
       h4 {
         margin: var(--space-4) 0 0 0;
@@ -31,12 +31,12 @@
         font-size: var(--font-size-4);
 
         span {
-          color: rgb(var(--color-description-text));
+          color: var(--color-description-text);
           font-weight: 500;
         }
 
         .green {
-          color: rgb(var(--color-brand));
+          color: var(--color-blue);
         }
       }
       p {

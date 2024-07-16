@@ -3,12 +3,12 @@
   grid-template-columns: 8px 1fr;
   border-radius: var(--border-radius-xs);
   gap: var(--space-3);
-  background-color: rgb(var(--color-moss-green-fade));
+  background-color: var(--color-blue-fade);
   padding-right: var(--space-3);
 }
 
 .neutral .line {
-  background-color: rgb(var(--color-brand));
+  background-color: var(--color-brand);
 }
 
 .line {

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Lora } from "next/font/google";
+import { Lora, Lusitana } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import classNames from "classnames";
 
@@ -7,10 +7,10 @@ import ThemeScript from "@/lib/ThemeScript";
 
 import "./globals.scss";
 
-const fontLora = Lora({
-  weight: ["400", "500", "700"],
+const fontLusitana = Lusitana({
+  weight: ["400", "700"],
   subsets: ["latin"],
-  variable: "--font-lora",
+  variable: "--font-lusitana",
 });
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ export default function RootLayout({
       <head>
         <ThemeScript />
       </head>
-      <body className={classNames(fontLora.className, fontLora.variable)}>
+      <body className={classNames(fontLusitana.className, fontLusitana.variable)}>
         {children}
       </body>
     </html>

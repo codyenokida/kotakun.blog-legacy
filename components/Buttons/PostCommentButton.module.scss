@@ -5,7 +5,7 @@
   gap: var(--space-2);
   align-self: baseline;
   background-color: transparent;
-  border: 2px solid rgb(var(--foreground-rgb));
+  border: 2px solid var(--foreground-rgb);
   border-radius: var(--border-radius-xs);
   padding: var(--space-1) var(--space-3);
   line-height: 28px;
@@ -14,7 +14,7 @@
   cursor: pointer;
 
   &:hover {
-    background-color: rgba(var(--color-button-bg-hover));
+    background-color: var(--color-button-bg-hover);
   }
 
   // disabled state

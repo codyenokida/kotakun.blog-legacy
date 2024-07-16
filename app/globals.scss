@@ -44,21 +44,24 @@
   --offsetHeight: var(--space-14);
 
   /* Color tokens */
-  --color-beige: 246, 244, 236;
-  --color-off-white: 210, 210, 210;
-  --color-black: 15, 15, 15;
-  --color-light-blue: 200, 220, 252, 0.1;
-  --color-dark-blue: 10, 16, 10;
-  --color-gray: 96, 96, 96;
-  --color-light-gray: 136, 136, 136;
+  --color-beige: rgba(255, 251, 242);
+  --color-blue: rgba(78, 163, 241);
+  --color-blue-fade: rgba(78, 163, 241, 0.13);
+  --color-green: rgba(18, 166, 51);
+  --color-orange: rgba(242, 125, 60);
+  --color-off-white: rgba(210, 210, 210);
+  --color-black: rgba(30, 30, 30);
+  --color-light-blue: rgba(200, 220, 252, 0.1);
+  --color-dark-blue: rgba(10, 16, 10);
+  --color-gray: rgba(96, 96, 96);
+  --color-light-gray: rgba(136, 136, 136);
 
-  // --color-moss-green: 118, 150, 72;
-  --color-moss-green: 70, 135, 70;
-  --color-moss-green-light: 100, 165, 100;
-  --color-moss-green-fade: 118, 137, 72, 0.13;
+  --color-moss-green: rgba(70, 135, 70);
+  --color-moss-green-light: rgba(100, 165, 100);
+  --color-moss-green-fade: rgba(118, 137, 72, 0.13);
 
   /* Border color tokens */
-  --color-border-gray: 200, 200, 200, 0.3;
+  --color-border-gray: rgba(200, 200, 200, 0.3);
 
   /* Button color tokens */
   --color-button-bg-hover: var(--color-moss-green-fade);
@@ -73,7 +76,7 @@
   --foreground-rgb: var(--color-black);
   --background-rgb: var(--color-beige);
 
-  --color-brand: var(--color-moss-green);
+  --color-brand: var(--color-blue);
 
   --logo-color: var(--foreground-rgb);
   --logo-dot-color: var(--color-brand);
@@ -81,19 +84,19 @@
   --color-description-text: var(--color-gray);
 }
 
-:root[data-theme="dark"] {
-  color-scheme: dark;
+// :root[data-theme="dark"] {
+//   color-scheme: dark;
 
-  --foreground-rgb: var(--color-off-white);
-  --background-rgb: var(--color-dark-blue);
+//   --foreground-rgb: var(--color-off-white);
+//   --background-rgb: var(--color-dark-blue);
 
-  --color-brand: var(--color-moss-green-light);
+//   --color-brand: var(--color-moss-green-light);
 
-  --logo-color: var(--foreground-rgb);
-  --logo-dot-color: var(--color-brand);
+//   --logo-color: var(--foreground-rgb);
+//   --logo-dot-color: var(--color-brand);
 
-  --color-description-text: var(--color-light-gray);
-}
+//   --color-description-text: var(--color-light-gray);
+// }
 
 html,
 body {
@@ -103,8 +106,8 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
+  color: var(--foreground-rgb);
+  background: var(--background-rgb);
 }
 
 a {
@@ -118,7 +121,7 @@ button {
 
 h1,
 h2 {
-  color: rgba(var(--foreground-rgb));
+  color: var(--foreground-rgb);
 }
 
 input,
@@ -129,7 +132,7 @@ option {
 
 a {
   font-weight: 700;
-  color: rgb(var(--color-brand));
+  color: var(--color-blue);
   text-decoration: none;
 }
 
@@ -144,7 +147,7 @@ ol {
 input,
 textarea {
   font-family: inherit;
-  background-color: rgba(var(--color-input-bg));
-  border: 2px solid rgba(var(--color-input-border));
+  background-color: var(--color-input-bg);
+  border: 2px solid var(--color-input-border);
   padding: var(--space-1) var(--space-2);
 }

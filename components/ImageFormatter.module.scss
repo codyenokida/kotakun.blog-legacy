@@ -20,7 +20,7 @@
   .image {
     width: 100%;
     object-fit: cover;
-    border: 1px solid rgb(var(--foreground-rgb));
+    border: 2px solid var(--color-border-gray);
     border-radius: var(--border-radius-xs);
   }
 
@@ -55,7 +55,7 @@
   .caption {
     width: 90%;
     margin: 0 auto;
-    color: rgb(var(--color-description-text));
+    color: var(--color-description-text);
     text-align: center;
     font-style: italic;
   }

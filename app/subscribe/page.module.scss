@@ -7,7 +7,7 @@
 
 .button {
   background-color: transparent;
-  border: 1px solid rgba(var(--foreground-rgb));
+  border: 1px solid var(--foreground-rgb);
   border-radius: var(--border-radius-xs);
   padding: var(--space-1) var(--space-2);
   font-size: var(--font-size-3);
@@ -15,7 +15,7 @@
   cursor: pointer;
 
   &:hover {
-    background-color: rgba(var(--color-moss-green-fade));
+    background-color: var(--color-moss-green-fade);
     transition-duration: 0.25s;
   }
 

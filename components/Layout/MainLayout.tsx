@@ -5,6 +5,7 @@ import Link from "next/link";
 import Posts from "@/components/Posts";
 import Footer from "../Footer";
 import IconLink from "../IconLink";
+import HeroSVG from "../HeroSVG";
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -13,7 +14,7 @@ interface MainLayoutProps {
 export default function MainLayout({ children }: MainLayoutProps) {
   return (
     <main className={styles.main}>
-      <Header />
+      <HeroSVG />
       {children}
       <Footer />
     </main>

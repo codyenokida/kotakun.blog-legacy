@@ -7,6 +7,8 @@ import ThailandIcon from "@/public/thailand.svg";
 import FireworksIcon from "@/public/fireworks.svg";
 
 import NewIcon from "@/public/new.svg";
+import Image from "next/image";
+import DynamicBlurImage from "./DynamicBlurImage";
 
 function formatDate(date: Date) {
   const dateFormatted = new Intl.DateTimeFormat("en-US", {
@@ -23,16 +25,25 @@ type FeaturedPostProps = {
     description: string;
     datePosted: Date;
   };
-  iconRef: React.ReactNode;
   newPost?: boolean;
+  src: string;
+  alt: string;
 };
 
-function FeaturedPost({ post, iconRef, newPost = false }: FeaturedPostProps) {
+function FeaturedPost({ post, newPost = false, src, alt }: FeaturedPostProps) {
   return (
     <Link href={`/post/${post.id}`} className={styles.featured}>
+      <div className={styles.imageContainer}>
+        <DynamicBlurImage
+          src={src}
+          alt={alt}
+          width={1200}
+          height={1200}
+          className={styles.image}
+        />
+      </div>
       <div className={styles.iconContainer}>
         <h3>{post.title}</h3>
-        {iconRef}
       </div>
       <div className={styles.info}>
         <p>{post.description}</p>
@@ -55,10 +66,22 @@ export default function FeaturedPosts() {
   return (
     <>
       <div className={styles.container}>
-        <FeaturedPost post={newPost} iconRef={<HouseIcon />} newPost />
-        <FeaturedPost post={featurePost1} iconRef={<VietnamIcon />} />
-        <FeaturedPost post={featurePost2} iconRef={<ThailandIcon />} />
-        <FeaturedPost post={featurePost3} iconRef={<FireworksIcon />} />
+        <FeaturedPost
+          post={newPost}
+          newPost
+          src="/posts/living-close-to-friends/mumu.jpeg"
+          alt="Mumu the cute dog cover photo"
+        />
+        <FeaturedPost
+          post={featurePost1}
+          src="/posts/vietnam-one/ninh-binh.jpeg"
+          alt="Ninh Binh Vietnam cover photo"
+        />
+        <FeaturedPost
+          post={featurePost3}
+          src="/posts/what-comes-next/new-years-resolution.jpeg"
+          alt="Ninh Binh Vietnam cover photo"
+        />
       </div>
     </>
   );

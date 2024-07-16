@@ -4,9 +4,10 @@ import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import classNames from "classnames";
+import { motion } from "framer-motion";
 
 import LoadingThemeButton from "@/components/LoadingThemeButton";
-import SplitText from "@/components/SplitText";
+import SplitText, { CharacterFadeAnimation } from "@/components/SplitText";
 
 import Logo from "@/public/logo.svg";
 
@@ -55,11 +56,11 @@ export default function Header({
   useEffect(() => {
     setTimeout(() => {
       setRevealText(true);
-    }, 500);
+    }, 200);
 
     setTimeout(() => {
       setRevealText(false);
-    }, 2500);
+    }, 1950);
   }, []);
 
   return (
@@ -86,6 +87,8 @@ export default function Header({
                   onMouseOver={() => setRevealText(true)}
                   onMouseLeave={() => setRevealText(false)}
                 >
+                  {/* <SplitText className={styles.reveal}>kotakun</SplitText> */}
+                  {/* <CharacterFadeAnimation text="kotakun" hover={revealText} /> */}
                   {revealText && (
                     <SplitText className={styles.reveal}>kotakun</SplitText>
                   )}

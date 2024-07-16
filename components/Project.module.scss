@@ -36,12 +36,12 @@
     gap: var(--space-2);
 
     span {
-      color: rgb(var(--color-description-text));
+      color: var(--color-description-text);
       font-weight: 500;
     }
 
     .green {
-      color: rgb(var(--color-brand));
+      color: var(--color-brand);
     }
 
     .buttons {
@@ -51,9 +51,9 @@
 
       .button {
         padding: var(--space-2) var(--space-3);
-        border: 2px solid rgb(var(--foreground-rgb));
+        border: 2px solid var(--foreground-rgb);
         border-radius: var(--border-radius-xs);
-        color: rgb(var(--foreground-rgb));
+        color: var(--foreground-rgb);
         text-decoration: none;
 
         .button_style {
@@ -70,7 +70,7 @@
         }
 
         &:hover {
-          background-color: rgb(var(--color-moss-green-fade));
+          background-color: var(--color-moss-green-fade);
 
           svg {
             transform: rotate(45deg) translateX(1px) translateY(-3px);

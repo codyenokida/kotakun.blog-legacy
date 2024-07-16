@@ -1,41 +1,53 @@
 .content {
   display: grid;
   grid-template-columns: 1fr minmax(auto, var(--max-width)) 1fr;
-  column-gap: var(--space-5);
-  row-gap: var(--space-4);
+  column-gap: var(--space-4);
+  row-gap: var(--space-5);
   align-items: stretch;
 
   & > * {
     grid-column: 2;
   }
 
+  .divider {
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-border-gray);
+
+    animation: fade-in 1s backwards;
+    animation-delay: 600ms;
+  }
+
   .title {
-    font-weight: var(--font-weight-500);
+    position: relative;
+    font-weight: var(--font-weight-400);
+    font-size: var(--font-size-7);
+    transform: translateY(0px);
+
+    animation: fade-in 1s backwards;
+    animation-delay: 700ms;
 
     .name {
-      color: rgba(var(--color-brand));
+      color: var(--color-blue);
     }
+  }
 
-    .earth {
-      display: inline-flex;
-      align-items: center;
-      justify-content: flex-end;
-      margin-left: var(--space-1);
+  .signature {
+    margin-top: var(--space-4);
+    animation: fade-in 1s backwards;
+    animation-delay: 850ms;
 
-      svg {
-        width: 34px;
-        height: 34px;
-      }
-    }
-
-    .world {
-      margin-left: var(--space-1);
+    path {
+      animation: draw-line 4s forwards;
+      animation-delay: 1.5s;
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
     }
   }
 
   .margin {
     width: 100%;
-    height: var(--offsetHeight);
+    height: var(--space-12);
     grid-column: 2;
   }
 
@@ -46,23 +58,54 @@
   }
 
   .subtitle {
-    border-bottom: 2px solid rgba(var(--color-border-gray));
     padding-bottom: var(--space-4);
   }
 
   h2 {
     display: inline-flex;
     align-items: center;
-    .lightbulb {
-      display: inline-flex;
-      align-items: center;
-      justify-content: flex-end;
-      margin-right: var(--space-2);
+  }
+}
 
-      svg {
-        width: 40px;
-        height: 45px;
-      }
+// Large devices (desktops, 992px and up)
+@media (max-width: 992px) and (min-width: 769px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (max-width: 768px) and (min-width: 577px) {
+  .featured {
+    width: 100%;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+  .content {
+    .title {
+      position: relative;
+      font-weight: var(--font-weight-400);
+      font-size: var(--font-size-6);
+      transform: translateY(0px);
+
+      animation: fade-in 0.75s forwards;
+      animation-delay: 800ms;
     }
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes draw-line {
+  to {
+    stroke-dashoffset: 0;
   }
 }
