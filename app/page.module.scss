@@ -14,7 +14,7 @@
     height: 2px;
     background-color: var(--color-border-gray);
 
-    animation: fade-in 1s backwards;
+    animation: fade-in 1s forwards;
     animation-delay: 600ms;
   }
 
@@ -23,8 +23,9 @@
     font-weight: var(--font-weight-400);
     font-size: var(--font-size-7);
     transform: translateY(0px);
+    opacity: 0;
 
-    animation: fade-in 1s backwards;
+    animation: fade-in 1s forwards;
     animation-delay: 700ms;
 
     .name {
@@ -34,7 +35,7 @@
 
   .signature {
     margin-top: var(--space-4);
-    animation: fade-in 1s backwards;
+    animation: fade-in 1s forwards;
     animation-delay: 850ms;
 
     path {

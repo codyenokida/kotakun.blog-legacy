@@ -15,7 +15,6 @@ export default async function Page() {
   return (
     <MainLayout>
       <div className={styles.content}>
-        <div className={styles.divider} />
         <h1 className={styles.title}>
           My name is{" "}
           <strong className={styles.name}>Kota (Cody) Enokida</strong>, this is
