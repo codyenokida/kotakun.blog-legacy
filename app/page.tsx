@@ -81,7 +81,6 @@ export default async function Page() {
           <h2 className={styles.subtitle}>All Posts</h2>
           <div className={styles.divider} />
         </div>
-
         <Posts />
       </div>
       <Analytics />
