@@ -3,22 +3,19 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
-import ThoughtsIcon from "@/public/thoughts.svg";
-
 import TextInput from "@/components/TextInput";
 import TextArea from "@/components/TextArea";
+import PostCommentButton from "@/components/Buttons/PostCommentButton";
+import PinkMatter from "@/components/svg/PinkMatter";
+import GreenMatter from "@/components/svg/GreenMatter";
 
 import { getCommentsFromId, postComment } from "@/lib/firebase/firestore";
 import { db } from "@/lib/firebase/firebase";
 import { doc, onSnapshot } from "firebase/firestore";
 
 import styles from "./Comments.module.scss";
-import PostCommentButton from "./Buttons/PostCommentButton";
 
 export default function Comments() {
-  const commentRef = useRef<HTMLDivElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
-
   /**
    * Pathname states
    */
@@ -26,21 +23,14 @@ export default function Comments() {
   const [pathValue, setPathValue] = useState("");
 
   /**
-   * Utility states
-   */
-  const [commentsOpen, setCommentsOpen] = useState<boolean>(false);
-
-  /**
    * Comment state
    */
   const [comments, setComments] = useState<Comment[]>([]);
-  const [commentsLoading, setCommentsLoading] = useState<boolean>(false);
+  const [_commentsLoading, setCommentsLoading] = useState<boolean>(false);
   const [author, setAuthor] = useState<string>("");
   const [content, setContent] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
-
-  useEffect(() => {}, []);
 
   useEffect(() => {
     // Ensure the code runs only on the client side
@@ -84,24 +74,6 @@ export default function Comments() {
     }
   }, [pathValue]);
 
-  useEffect(() => {
-    const handleClickOutside = (event: any) => {
-      if (
-        commentRef.current &&
-        !commentRef.current.contains(event.target) &&
-        buttonRef.current &&
-        !buttonRef.current.contains(event.target)
-      ) {
-        setCommentsOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [setCommentsOpen]);
-
   const handlePostClick = async () => {
     try {
       setLoading(true);
@@ -118,6 +90,7 @@ export default function Comments() {
       setLoading(false);
     }
   };
+
   /**
    * Helper function to render comments
    */
@@ -148,10 +121,75 @@ export default function Comments() {
   return (
     <div className={styles.container}>
       <h2>
-        Leave any thoughts or comments
+        Leave any thoughts or comments{" "}
         <span>
-          {" "}
-          here! <ThoughtsIcon className={styles.icon} />
+          here!
+          <PinkMatter
+            width={18}
+            height={18}
+            initialAnimate={{
+              x: 58,
+              y: -6,
+              scale: 1,
+              opacity: 1,
+              transition: {
+                duration: 0.6,
+                ease: "backInOut",
+                delay: 0.8,
+              },
+            }}
+            initialPosition={{
+              x: 58,
+              y: 0,
+              scale: 0.2,
+              opacity: 0,
+            }}
+            animate={{
+              rotate: [0, -30, 0],
+              scale: [0.9, 0.85, 0.9],
+              x: [0, 2, 0],
+              y: [0, 2, 0],
+              transition: {
+                duration: 8,
+                repeat: Infinity,
+                // repeatType: "reverse",
+                ease: "easeInOut",
+              },
+            }}
+          />
+          <GreenMatter
+            width={16}
+            height={16}
+            initialAnimate={{
+              x: 72,
+              y: 6,
+              scale: 1,
+              opacity: 1,
+              transition: {
+                duration: 0.6,
+                ease: "backInOut",
+                delay: 0.8,
+              },
+            }}
+            initialPosition={{
+              x: 72,
+              y: 8,
+              scale: 0.2,
+              opacity: 0,
+            }}
+            animate={{
+              rotate: [0, -30, 0],
+              scale: [0.9, 0.85, 0.9],
+              x: [0, 2, 0],
+              y: [0, 2, 0],
+              transition: {
+                duration: 8,
+                repeat: Infinity,
+                // repeatType: "reverse",
+                ease: "easeInOut",
+              },
+            }}
+          />
         </span>
       </h2>
       {comments.length === 0 && <p>No comments, yet... chime in!</p>}

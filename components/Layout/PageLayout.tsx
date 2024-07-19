@@ -1,11 +1,9 @@
-import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import Transition from "@/components/Transition";
+import IconLink from "@/components/IconLink";
+import SVGBanner from "@/components/SVGBanner";
 
 import "./PostLayout.scss";
-import Footer from "../Footer";
-import Transition from "../Transition";
-import IconLink from "../IconLink";
-import Comments from "../Comments";
-import SVGBanner from "../SVGBanner";
 
 export default function MdxLayout({ children }: { children: React.ReactNode }) {
   return (

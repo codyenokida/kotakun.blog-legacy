@@ -9,6 +9,17 @@ import {
 export {};
 
 declare global {
+  type Post = {
+    id: string;
+    title: string;
+    description: string;
+    datePosted: Date;
+  };
+
+  type Posts = {
+    [year: number | string]: Post[];
+  };
+
   type Meta = {
     id: string;
     title: string;

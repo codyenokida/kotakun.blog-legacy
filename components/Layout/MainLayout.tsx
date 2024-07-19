@@ -1,11 +1,7 @@
-import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import HeroSVG from "@/components/HeroSVG";
 
 import styles from "./MainLayout.module.scss";
-import Link from "next/link";
-import Posts from "@/components/Posts";
-import Footer from "../Footer";
-import IconLink from "../IconLink";
-import HeroSVG from "../HeroSVG";
 
 interface MainLayoutProps {
   children: React.ReactNode;

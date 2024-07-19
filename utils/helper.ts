@@ -1,4 +1,3 @@
-
 /**
  * Helper utility functions
  */
@@ -63,4 +62,26 @@ export async function compressImage(file: File) {
     maxWidthOrHeight: 1920,
     useWebWorker: true,
   });
+}
+
+export function flattenBlogPosts(blogData: Posts) {
+  const flattenedPosts: Post[] = [];
+
+  const blogEntries = Object.keys(blogData).toSorted().reverse();
+
+  // Iterate through each year
+  for (const year of blogEntries) {
+    for (const post of blogData[year]) {
+      // Add all posts from the current year to the flattened array
+      flattenedPosts.push(post);
+    }
+  }
+
+  // Sort the flattened array by datePosted in descending order (newest first)
+  flattenedPosts.sort(
+    (a, b) =>
+      b.datePosted.getUTCMilliseconds() - a.datePosted.getUTCMilliseconds()
+  );
+
+  return flattenedPosts;
 }

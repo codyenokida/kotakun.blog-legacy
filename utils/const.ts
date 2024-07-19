@@ -1,3 +1,5 @@
+import { flattenBlogPosts } from "./helper";
+
 export const tags = ["All", "Life", "Thoughts", "Bicycle", "Reviews", "Misc."];
 
 export const tagsForRender = [
@@ -21,7 +23,7 @@ export const postList = {
       id: "living-close-to-friends",
       title: "Living Close To Your Friends",
       description:
-        "  An anecdote and short dream of how and where I want to live with my friends.",
+        "An anecdote and short dream of how and where I want to live with my friends.",
       datePosted: new Date("07/04/2024"),
     },
     {
@@ -131,3 +133,5 @@ export const postList = {
     },
   ],
 };
+
+export const flattenedPostList = flattenBlogPosts(postList);

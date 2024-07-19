@@ -3,16 +3,11 @@ import styles from "./SVGBanner.module.scss";
 import Asteroid from "@/components/svg/Asteroid";
 import GreenMatter from "@/components/svg/GreenMatter";
 import YellowStar from "@/components/svg/YellowStar";
-import GreySphere from "@/components/svg/GreySphere";
 import PurpleMatter from "@/components/svg/PurpleMatter";
 import Surfboard from "@/components/svg/Surfboard";
 import Earth from "@/components/svg/Earth";
 import PinkMatter from "@/components/svg/PinkMatter";
 import StrawHat from "@/components/svg/StrawHat";
-import Bike from "@/components/svg/Bike";
-import Paddle from "@/components/svg/Paddle";
-import Ball from "@/components/svg/Ball";
-import SoccerBall from "@/components/svg/SoccerBall";
 
 export default function SVGBanner() {
   /** MOBILE RENDERS */
@@ -570,8 +565,8 @@ export default function SVGBanner() {
     return (
       <>
         <Surfboard
-        width={60}
-        height={80}
+          width={60}
+          height={80}
           initialAnimate={{
             x: 600,
             y: -10,

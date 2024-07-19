@@ -1,11 +1,12 @@
-import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import Transition from "@/components/Transition";
+import IconLink from "@/components/IconLink";
+import Comments from "@/components/Comments";
+import SVGBanner from "@/components/SVGBanner";
+import PostRecommender from "@/components/PostRecommender";
 
 import "./PostLayout.scss";
-import Footer from "../Footer";
-import Transition from "../Transition";
-import IconLink from "../IconLink";
-import Comments from "../Comments";
-import SVGBanner from "../SVGBanner";
+
 
 export default function MdxLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -16,7 +17,9 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
           <IconLink href="/" text="Home" />
         </div>
         <div className="content">
-          {children} <Comments />
+          {children}
+          <Comments />
+          <PostRecommender />
         </div>
       </Transition>
       <Footer />
