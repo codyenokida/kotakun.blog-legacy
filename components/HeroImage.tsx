@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import styles from "./HeroImage.module.scss";
+import DynamicBlurImage from "./DynamicBlurImage";
 
 type HeroImageProps = {
   src: string;
@@ -11,7 +12,7 @@ type HeroImageProps = {
 export default function HeroImage({ src, alt, caption }: HeroImageProps) {
   return (
     <div>
-      <Image
+      <DynamicBlurImage
         src={src}
         alt={alt}
         width={1200}

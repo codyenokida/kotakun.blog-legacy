@@ -35,6 +35,8 @@
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
   .banner {
+    margin-bottom: var(--space-5);
+
     .canvas {
       display: none;
     }

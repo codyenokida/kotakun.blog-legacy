@@ -2,34 +2,19 @@ import { Analytics } from "@vercel/analytics/react";
 
 import Posts from "@/components/Posts";
 import MainLayout from "@/components/Layout/MainLayout";
-import TextLink from "@/components/TextLink";
+import FeaturedPosts from "@/components/FeaturedPosts";
+import YellowStar from "@/components/svg/YellowStar";
 
-import EarthIcon from "@/public/earth.svg";
 import Signature from "@/public/hero/signature.svg";
 
 import styles from "./page.module.scss";
-import FeaturedPosts from "@/components/FeaturedPosts";
-import YellowStar from "@/components/svg/YellowStar";
+import HeroTitle from "@/components/HeroTitle";
 
 export default async function Page() {
   return (
     <MainLayout>
       <div className={styles.content}>
-        <h1 className={styles.title}>
-          My name is{" "}
-          <strong className={styles.name}>Kota (Cody) Enokida</strong>, this is
-          my blog where I share a slice of my life as a 24yo navigating this
-          strange, curious world.
-          <br />
-          <br />
-          You can find more <TextLink href="/about">about me</TextLink>, what
-          I&apos;m doing <TextLink href="/now">now</TextLink>, and other{" "}
-          <TextLink href="/projects">fun things</TextLink> I&apos;ve made on the
-          web.
-          <br />
-          <br />
-          Thank you for taking the time to view my corner of the Internet!
-        </h1>
+        <HeroTitle />
         <div className={styles.signature}>
           <Signature />
         </div>

@@ -1,22 +1,12 @@
-import styles from "./FeaturedPosts.module.scss";
 import Link from "next/link";
+import Image from "next/image";
+
 import { postList } from "@/utils/const";
-import HouseIcon from "@/public/house.svg";
-import VietnamIcon from "@/public/vietnam.svg";
-import ThailandIcon from "@/public/thailand.svg";
-import FireworksIcon from "@/public/fireworks.svg";
 
 import NewIcon from "@/public/new.svg";
-import Image from "next/image";
-import DynamicBlurImage from "./DynamicBlurImage";
 
-function formatDate(date: Date) {
-  const dateFormatted = new Intl.DateTimeFormat("en-US", {
-    month: "short",
-    day: "2-digit",
-  }).format(date);
-  return dateFormatted;
-}
+import styles from "./FeaturedPosts.module.scss";
+import DynamicBlurImage from "@/components/DynamicBlurImage";
 
 type FeaturedPostProps = {
   post: {

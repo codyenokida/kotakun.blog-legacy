@@ -15,32 +15,17 @@
     background-color: var(--color-border-gray);
 
     animation: fade-in 1s forwards;
-    animation-delay: 600ms;
-  }
-
-  .title {
-    position: relative;
-    font-weight: var(--font-weight-400);
-    font-size: var(--font-size-7);
-    transform: translateY(0px);
-    opacity: 0;
-
-    animation: fade-in 1s forwards;
-    animation-delay: 700ms;
-
-    .name {
-      color: var(--color-blue);
-    }
+    animation-delay: 400ms;
   }
 
   .signature {
     margin-top: var(--space-4);
     animation: fade-in 1s forwards;
-    animation-delay: 850ms;
+    animation-delay: 500ms;
 
     path {
       animation: draw-line 4s forwards;
-      animation-delay: 1.5s;
+      animation-delay: 1s;
       stroke-dasharray: 1000;
       stroke-dashoffset: 1000;
     }
@@ -74,37 +59,10 @@
 
 // Medium devices (tablets, 768px and up)
 @media (max-width: 768px) and (min-width: 577px) {
-  .featured {
-    width: 100%;
-  }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
-  .content {
-    .title {
-      position: relative;
-      font-weight: var(--font-weight-400);
-      font-size: var(--font-size-6);
-      transform: translateY(0px);
-
-      animation: fade-in 0.75s forwards;
-      animation-delay: 800ms;
-
-      margin-top: var(--space-5);
-    }
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
 }
 
 @keyframes draw-line {
