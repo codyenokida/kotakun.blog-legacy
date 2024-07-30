@@ -7,7 +7,6 @@ import PostRecommender from "@/components/PostRecommender";
 
 import "./PostLayout.scss";
 
-
 export default function MdxLayout({ children }: { children: React.ReactNode }) {
   return (
     <main style={{ position: "relative" }}>

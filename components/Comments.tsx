@@ -192,8 +192,11 @@ export default function Comments() {
           />
         </span>
       </h2>
-      {comments.length === 0 && <p>No comments, yet... chime in!</p>}
-      {comments.length !== 0 && renderComments()}
+      {comments.length === 0 ? (
+        <p>No comments, yet... chime in!</p>
+      ) : (
+        renderComments()
+      )}
       <TextInput value={author} setValue={setAuthor} labelText="Name" />
       <TextArea value={content} setValue={setContent} labelText="Comment" />
       <PostCommentButton

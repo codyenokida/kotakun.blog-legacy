@@ -15,7 +15,7 @@ export const tagsForEdit = ["Life", "Thoughts", "Bicycle", "Reviews", "Misc."];
 
 export const tagsForPath = ["life", "thoughts", "bicycle", "reviews", "misc"];
 
-export const currentLocation = "Irvine, CA";
+export const currentLocation = "Taipei, TW 🇹🇼";
 
 export const postList = {
   2024: [

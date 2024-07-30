@@ -14,8 +14,7 @@ export default function Posts() {
   return (
     <div className={styles.container}>
       {Object.entries(postList)
-        .toSorted()
-        .reverse()
+        .sort((a, b) => Number(b[0]) - Number(a[0]))
         .map(([year, posts]) => (
           <div className={styles.postContainer} key={year}>
             <h2 className={styles.yearTitle}>{year}</h2>
@@ -23,7 +22,7 @@ export default function Posts() {
               <Link
                 href={`/post/${post.id}`}
                 className={styles.post}
-                key={post.title}
+                key={post.id}
               >
                 <div className={styles.date}>
                   <span>{formatDate(post.datePosted)}</span>
@@ -36,13 +35,6 @@ export default function Posts() {
             ))}
           </div>
         ))}
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
     </div>
   );
 }
