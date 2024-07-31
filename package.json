@@ -25,6 +25,8 @@
     "firebase": "^10.11.1",
     "framer-motion": "^11.2.11",
     "html-react-parser": "^5.1.10",
+    "leaflet": "^1.9.4",
+    "leaflet-defaulticon-compatibility": "^0.1.2",
     "marked-react": "^2.0.0",
     "next": "14.2.3",
     "next-auth": "^4.24.7",
@@ -33,12 +35,14 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.2.1",
+    "react-leaflet": "^4.2.1",
     "sharp": "^0.33.3",
     "showdown": "^2.1.0",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
+    "@types/leaflet": "^1.9.12",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
