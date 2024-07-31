@@ -20,6 +20,12 @@ export const currentLocation = "Taipei, TW 🇹🇼";
 export const postList = {
   2024: [
     {
+      id: "games-and-life",
+      title: "How You Play Games is How You Live Your Life",
+      description: "A narrative on how gaming is intertwined with how we live.",
+      datePosted: new Date("07/31/2024"),
+    },
+    {
       id: "living-close-to-friends",
       title: "Living Close To Your Friends",
       description:

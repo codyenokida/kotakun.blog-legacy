@@ -49,9 +49,8 @@ function FeaturedPost({ post, newPost = false, src, alt }: FeaturedPostProps) {
 
 export default function FeaturedPosts() {
   const newPost = postList[2024][0];
-  const featurePost1 = postList[2024][8]; // Vietnam 1
-  const featurePost2 = postList[2024][3]; // Thailand (Finale)
-  const featurePost3 = postList[2023][0]; // Thailand (Finale)
+  const featurePost1 = postList[2024][9]; // Vietnam 1
+  const featurePost2 = postList[2024][1]; // Living Close to Friends
 
   return (
     <>
@@ -59,17 +58,17 @@ export default function FeaturedPosts() {
         <FeaturedPost
           post={newPost}
           newPost
+          src="/posts/games-and-life/celeste.jpg"
+          alt="Celeste game cover screenshot"
+        />
+        <FeaturedPost
+          post={featurePost2}
           src="/posts/living-close-to-friends/mumu.jpeg"
           alt="Mumu the cute dog cover photo"
         />
         <FeaturedPost
           post={featurePost1}
           src="/posts/vietnam-one/ninh-binh.jpeg"
-          alt="Ninh Binh Vietnam cover photo"
-        />
-        <FeaturedPost
-          post={featurePost3}
-          src="/posts/what-comes-next/new-years-resolution.jpeg"
           alt="Ninh Binh Vietnam cover photo"
         />
       </div>
