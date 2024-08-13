@@ -85,3 +85,18 @@ export function flattenBlogPosts(blogData: Posts) {
 
   return flattenedPosts;
 }
+
+export const getPostById = (posts: Posts, id: string) => {
+  if (id === "latest") {
+    const latestYear = Object.keys(posts).pop();
+    return posts[latestYear as keyof typeof posts][0];
+  }
+
+  for (const year in posts) {
+    const post = posts[year as keyof typeof posts].find(
+      (post) => post.id === id
+    );
+    if (post) return post;
+  }
+  return null;
+};

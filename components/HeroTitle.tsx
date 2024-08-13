@@ -12,20 +12,22 @@ export default function HeroTitle() {
       className={styles.title}
       initial={{
         opacity: 0,
-        translateY: 50,
+        translateY: 24,
       }}
       animate={{
         opacity: 1,
         translateY: 0,
         transition: {
-          duration: 0.5,
-          ease: "easeInOut",
+          duration: 0.4,
+          stiffness: 20,
+          damping: 10,
+          delay: 0.7,
         },
       }}
     >
       My name is <strong className={styles.name}>Kota (Cody) Enokida</strong>,
-      this is my blog where I share a slice of my life as a 24yo navigating this
-      strange, curious world.
+      this is my blog where I share a slice of my life as a curious 24yo
+      navigating this strange, huge world.
       <br />
       <br />
       You can find more <TextLink href="/about">about me</TextLink>, what

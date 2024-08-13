@@ -4,11 +4,11 @@ import Posts from "@/components/Posts";
 import MainLayout from "@/components/Layout/MainLayout";
 import FeaturedPosts from "@/components/FeaturedPosts";
 import YellowStar from "@/components/svg/YellowStar";
+import HeroTitle from "@/components/HeroTitle";
 
 import Signature from "@/public/hero/signature.svg";
 
 import styles from "./page.module.scss";
-import HeroTitle from "@/components/HeroTitle";
 
 export default async function Page() {
   return (
@@ -18,7 +18,7 @@ export default async function Page() {
         <div className={styles.signature}>
           <Signature />
         </div>
-        <div className={styles.divider} />
+        {/* <div className={styles.divider} /> */}
         <div className={styles.margin} />
         <div>
           <div style={{ width: "100%", display: "flex" }}>

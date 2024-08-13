@@ -21,13 +21,34 @@
   .signature {
     margin-top: var(--space-4);
     animation: fade-in 1s forwards;
-    animation-delay: 500ms;
+    animation-delay: 1000ms;
 
-    path {
-      animation: draw-line 4s forwards;
-      animation-delay: 1s;
-      stroke-dasharray: 1000;
-      stroke-dashoffset: 1000;
+    svg {
+      stroke-dasharray: 1400;
+      stroke-dashoffset: 1400;
+
+      g:nth-child(1) path {
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+        animation: draw-line 2s forwards;
+      }
+
+      path {
+        stroke-dasharray: 1400;
+        stroke-dashoffset: 1400;
+      }
+
+      g {
+        // signature animation
+        &:nth-child(1) {
+          path {
+            animation: draw-line 6s forwards;
+            animation-delay: 1.25s;
+            stroke-dasharray: 1400;
+            stroke-dashoffset: 1400;
+          }
+        }
+      }
     }
   }
 

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Lora, Lusitana } from "next/font/google";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { Lusitana } from "next/font/google";
 import classNames from "classnames";
 
 import ThemeScript from "@/lib/ThemeScript";
@@ -28,7 +27,9 @@ export default function RootLayout({
       <head>
         <ThemeScript />
       </head>
-      <body className={classNames(fontLusitana.className, fontLusitana.variable)}>
+      <body
+        className={classNames(fontLusitana.className, fontLusitana.variable)}
+      >
         {children}
       </body>
     </html>

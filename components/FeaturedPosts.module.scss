@@ -11,7 +11,7 @@
   flex-direction: column;
   padding: var(--space-3);
   gap: var(--space-2);
-  min-width: calc(33.333% - var(--space-3));
+  min-width: calc(50% - var(--space-3));
   flex: 1;
   border: 2px solid var(--color-border-gray);
   border-radius: var(--border-radius-xs);
@@ -37,13 +37,13 @@
 
   .imageContainer {
     width: 100%;
-    height: 160px;
+    height: 200px;
     overflow: hidden;
     border-radius: var(--border-radius-xs);
 
     img {
       width: 100%;
-      height: 160px;
+      height: 200px;
       object-fit: cover;
       transition: scale 0.2s ease-in-out;
     }

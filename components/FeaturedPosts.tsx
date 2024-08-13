@@ -7,6 +7,7 @@ import NewIcon from "@/public/new.svg";
 
 import styles from "./FeaturedPosts.module.scss";
 import DynamicBlurImage from "@/components/DynamicBlurImage";
+import { getPostById } from "@/utils/helper";
 
 type FeaturedPostProps = {
   post: {
@@ -14,13 +15,15 @@ type FeaturedPostProps = {
     title: string;
     description: string;
     datePosted: Date;
-  };
+  } | null;
   newPost?: boolean;
   src: string;
   alt: string;
 };
 
 function FeaturedPost({ post, newPost = false, src, alt }: FeaturedPostProps) {
+  if (!post) return null;
+
   return (
     <Link href={`/post/${post.id}`} className={styles.featured}>
       <div className={styles.imageContainer}>
@@ -48,9 +51,10 @@ function FeaturedPost({ post, newPost = false, src, alt }: FeaturedPostProps) {
 }
 
 export default function FeaturedPosts() {
-  const newPost = postList[2024][0];
-  const featurePost1 = postList[2024][9]; // Vietnam 1
-  const featurePost2 = postList[2024][1]; // Living Close to Friends
+  const newPost = getPostById(postList, "latest");
+  const featurePost1 = getPostById(postList, "vietnam-three"); // Vietnam (Part 3)
+  const featurePost2 = getPostById(postList, "living-close-to-friends"); // Living Close to Friends
+  const featurePost3 = getPostById(postList, "reflection-of-bay-area"); // A Reflection of Bay Area
 
   return (
     <>
@@ -68,7 +72,12 @@ export default function FeaturedPosts() {
         />
         <FeaturedPost
           post={featurePost1}
-          src="/posts/vietnam-one/ninh-binh.jpeg"
+          src="/posts/vietnam-three/film-bikepacking-pics.jpeg"
+          alt="Ninh Binh Vietnam cover photo"
+        />
+        <FeaturedPost
+          post={featurePost3}
+          src="/posts/reflection-of-bay-area/san-francisco.jpeg"
           alt="Ninh Binh Vietnam cover photo"
         />
       </div>
